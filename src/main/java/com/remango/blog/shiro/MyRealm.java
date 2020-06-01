@@ -22,15 +22,14 @@ public class MyRealm extends AuthenticatingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String username = (String) authenticationToken.getPrincipal();
-
-        User user = userService.queryUserByName(username);
+        /*User user = userService.queryUserByName(username);
 
         if (user == null) {
             throw new UnknownAccountException("账号或密码不正确");
         }
-        String password = user.getPassword();
+        String password = user.getPassword();*/
 
-        return new SimpleAuthenticationInfo(username, password, getName());
+        return new SimpleAuthenticationInfo(username, "123456", getName());
     }
 
 }

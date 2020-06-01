@@ -1,6 +1,5 @@
 package com.remango.blog.service.impl;
 
-import com.remango.blog.dao.UserDao;
 import com.remango.blog.entity.CurrentUserInfo;
 import com.remango.blog.entity.PageList;
 import com.remango.blog.entity.User;
@@ -17,32 +16,25 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserDao userDao;
     @Override
     public PageList<User> queryUserList(String username, Integer offset, Integer limit){
         PageList<User> userPageList = new PageList<>();
-        List<User> userList= userDao.queryUserList(username, offset, limit);
-        int total = userDao.queryUserTotal(username);
-        userPageList.setRows(userList);
-        userPageList.setTotal(total);
         return userPageList;
     }
 
     @Override
     public void saveUser(User user){
         user.setCreateTime(new Date());
-        userDao.saveUser(user);
     }
 
     @Override
     public User queryUserByName(String username) {
-        return userDao.queryUserByName(username);
+        return null;
     }
 
     @Override
     public CurrentUserInfo queryUserInfoByName (String username){
-        return userDao.queryUserInfoByName(username);
+        return null;
     }
     
 }

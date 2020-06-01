@@ -1,8 +1,8 @@
 package com.remango.blog.config;
 
-import org.mybatis.spring.annotation.MapperScan;
+//import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+//import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author zhengli
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 
 @Configuration
-@EnableTransactionManagement
-@MapperScan("com.remango.blog.dao")
+//@EnableTransactionManagement
+//@MapperScan("com.remango.blog.dao")
 public class MybatisConfig {
 }
